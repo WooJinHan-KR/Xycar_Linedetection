@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="xycar_imu" type="9dof_imu_node.py" name="xycar_imu" output="screen">
+    <param name="rviz_mode" type="string" value="true" />
+    <param name="port" type="string" value="/dev/ttyIMU" />
+    <param name="frame_id" type="string" value="imu" />
+    <param name="topic" type="string" value="imu" />
+  </node>
+</launch>

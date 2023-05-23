@@ -1,0 +1,8 @@
+<launch>
+	<!-- motor -->
+	<include file="$(find xycar_motor)/launch/xycar_motor.launch" />
+	<!-- ultra -->
+	<include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic_noviewer.launch" />
+
+	<node name="ultra_driver" pkg="ultra_drive" type="ultra_drive.py" output="screen" />
+</launch>
