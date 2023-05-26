@@ -39,7 +39,7 @@ template <typename PREC, FilteringMode Mode>
 PREC MovingAverageFilter<PREC, Mode>::update(uint32_t sampleSize)
 {
     int32_t sum = 0;
-    int32_t denominator = 0;
+    int32_t denominator = 1;
 
     if (Mode == FilteringMode::NORMAL)
     {
@@ -51,8 +51,10 @@ PREC MovingAverageFilter<PREC, Mode>::update(uint32_t sampleSize)
     {
         for (uint32_t i = 0; i < sampleSize; ++i)
         {
-            sum += mSamples[i] * mWeights[i];
-            denominator += mWeights[i];
+            sum += mSamples[i] * i;
+            //sum += mSamples[i] * mWeights[i];
+            denominator += i;
+            //denominator += mWeights[i];
         }
     }
 
