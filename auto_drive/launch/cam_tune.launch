@@ -1,9 +1,0 @@
-<launch>
-
-  <!-- usb_cam -->
-  <include file="$(find usb_cam)/launch/usb_cam-noviewer.launch" />
-
-  <!-- cam_tune -->
-  <node name="cam_tune" pkg="auto_drive" type="cam_tune.py" output="screen"/>
-
-</launch>

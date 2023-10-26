@@ -1,8 +1,0 @@
-<launch>
-
-  <include file="$(find usb_cam)/launch/usb_cam-test.launch" />
-  <include file="$(find xycar_imu)/launch/xycar_imu_9dof.launch" />
-  <include file="$(find xycar_lidar)/launch/lidar.launch" />
-  <include file="$(find xycar_ultrasonic)/launch/xycar_ultrasonic.launch" />
-
-</launch>

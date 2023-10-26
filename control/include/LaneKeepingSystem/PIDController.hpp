@@ -22,7 +22,6 @@ public:
 
     PIDController(PREC kp_, PREC Ki_, PREC Kd_);
 
-    //void setConstants(PREC kp_, PREC Ki_, PREC Kd_);
     PREC getControlOutput(PREC errorFromMid);
 
 private:
@@ -30,7 +29,6 @@ private:
     PREC integral;
     PREC prev_error;
     PREC derivative;
-    //using Ptr = std::shared_ptr<PIDController<T>>;
 };
 } // namespace Xycar
 #endif // PID_CONTROLLER_HPP_

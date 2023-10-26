@@ -56,13 +56,7 @@ void LaneKeepingSystem<PREC>::run()
             continue;
 
         const auto [leftPosisionX, rightPositionX] = mHoughTransformLaneDetector->getLanePosition(mFrame);
-        /*if(leftPosisionX <= 30){
-            leftPosisionX = 30
-        }
-        else if(rightPositionX == 0){
 
-        }*/
-    
         mMovingAverage->addSample(static_cast<int32_t>((leftPosisionX + rightPositionX) / 2)+3);
 
         int32_t estimatedPositionX = static_cast<int32_t>(mMovingAverage->getResult());
@@ -73,23 +67,9 @@ void LaneKeepingSystem<PREC>::run()
 
         std::cout << "error " << errorFromMid << std::endl;             
 
-
-/////////////////////////////////////////////////////////////////////////////
-
         speedControl(steeringAngle);
         drive(steeringAngle );
 
-////////////////////////////////////////////////////////////////////////////
-/*
-        if (mDebugging)
-        {
-            std::cout << "lpos: " << leftPosisionX << ", rpos: " << rightPositionX << ", mpos: " << estimatedPositionX << std::endl;
-            std::cout << "SteeringAngle: " << steeringAngle << std::endl;             
-            mHoughTransformLaneDetector->drawRectangles(leftPosisionX, rightPositionX, estimatedPositionX);
-            cv::imshow("Debug", mHoughTransformLaneDetector->getDebugFrame());
-            cv::waitKey(1);
-        }*/
-    }
 }
 
 template <typename PREC>

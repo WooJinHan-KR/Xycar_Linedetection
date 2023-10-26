@@ -1,7 +1,0 @@
-<launch>
-
-  <include file="$(find xycar_motor)/launch/xycar_motor.launch" />
-
-  <node name="auto_drive" output="screen" pkg="auto_drive" type="drive_check.py" />
-
-</launch>
